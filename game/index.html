@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mothlight — A Quiet Heist in the Paper Archive</title>
+<link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+<div id="app">
+  <header id="hud">
+    <div id="title-block">
+      <h1 id="game-title">Mothlight</h1>
+      <span id="level-name">Reading Room</span>
+    </div>
+    <div id="counters">
+      <span id="artifact-count">Artifacts 0/2</span>
+      <span id="suspicion-wrap"><span id="suspicion-label">Suspicion 0%</span><span id="suspicion-bar"><span id="suspicion-fill"></span></span></span>
+      <span id="score">Score 0</span>
+      <span id="timer">00:00</span>
+      <span id="sneak-tag">SNEAKING</span>
+    </div>
+  </header>
+  <div id="alarm-banner">⚠ ALARM — break line of sight to slip away ⚠</div>
+  <main id="stage">
+    <canvas id="game-canvas" width="960" height="600"></canvas>
+    <div id="title-overlay" class="overlay">
+      <div class="panel">
+        <h2>Mothlight</h2>
+        <p class="tagline">A quiet heist in the paper archive</p>
+        <p>Steal every gold seal, then slip out the green exit unseen.<br>
+        Guards patrol with lantern cones — light sees you fast, shadow hides you.<br>
+        Sneak with <b>Shift</b>. Move with <b>WASD / arrows</b> or click to walk.<br>
+        <b>E</b> grabs a seal, <b>R</b> restarts the room, <b>M</b> mutes.</p>
+        <button id="play-btn">Begin the heist</button>
+      </div>
+    </div>
+    <div id="clear-overlay" class="overlay">
+      <div class="panel">
+        <h2>Room cleared</h2>
+        <p id="clear-stars">★★★</p>
+        <p id="clear-score">Score 0</p>
+        <p id="clear-time">Time 00:00</p>
+        <button id="next-btn">Next →</button>
+      </div>
+    </div>
+    <div id="caught-overlay" class="overlay">
+      <div class="panel">
+        <h2>Caught!</h2>
+        <p>A guard laid hands on you in the lamplight.<br>The archive keeps its seals — this time.</p>
+        <button id="retry-btn">Try the room again</button>
+      </div>
+    </div>
+    <div id="win-overlay" class="overlay">
+      <div class="panel">
+        <h2>Heist complete</h2>
+        <p id="win-score">Final score 0</p>
+        <p>Every seal stolen. Every guard fooled.<br>The moth flies out into the night.</p>
+        <button id="again-btn">Steal it all again</button>
+      </div>
+    </div>
+  </main>
+  <footer id="controls">
+    <span>Move: WASD / arrows / click &nbsp;·&nbsp; Sneak: Shift &nbsp;·&nbsp; Grab: E &nbsp;·&nbsp; Restart: R</span>
+    <span>
+      <button id="restart-btn">Restart room</button>
+      <button id="mute-btn">Sound: On (M)</button>
+    </span>
+  </footer>
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
